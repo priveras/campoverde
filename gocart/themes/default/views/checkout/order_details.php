@@ -1,3 +1,4 @@
+<?php $this->load->view('intro'); ?>
 <div class="row font">
 	<!--<?php if(!empty($customer['bill_address'])):?>
 	<div class="col-lg-3">

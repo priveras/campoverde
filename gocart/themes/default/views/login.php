@@ -1,3 +1,4 @@
+<?php $this->load->view('intro'); ?>
 <div class="row font" style="margin-top:20px;">
 	<div class="col-lg-12"> 
 		<div class="row">

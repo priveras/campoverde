@@ -1,3 +1,4 @@
+<?php $this->load->view('intro'); ?>
 <?php
 $company	= array('id'=>'bill_company', 'class'=>'form-control', 'placeholder' => 'ej: Campo Verde', 'name'=>'company', 'value'=> set_value('company'));
 $first		= array('id'=>'bill_firstname', 'class'=>'form-control', 'placeholder' => 'ej: Miguel', 'name'=>'firstname', 'value'=> set_value('firstname'));

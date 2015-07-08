@@ -1,3 +1,4 @@
+<?php $this->load->view('intro'); ?>
 <?php echo form_open('cart/giftcard');?>
     <div class="row" style="margin-top:20px;">
         <div class="span4">

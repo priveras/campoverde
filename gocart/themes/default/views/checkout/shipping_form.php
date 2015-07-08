@@ -1,3 +1,4 @@
+<?php $this->load->view('intro'); ?>
 <div class="page-header">
 	<h2><?php echo lang('form_checkout');?></h2>
 </div>

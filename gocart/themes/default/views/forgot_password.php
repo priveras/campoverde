@@ -1,3 +1,4 @@
+<?php $this->load->view('intro'); ?>
 <div class="row" style="margin-top:50px;">
 	<div class="span6 offset3">
 		<div class="page-header">

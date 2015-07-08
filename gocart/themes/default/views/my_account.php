@@ -1,3 +1,4 @@
+<?php $this->load->view('intro'); ?>
 <?php if(validation_errors()):?>
 <div class="alert allert-error">
 	<a class="close" data-dismiss="alert">×</a>
@@ -51,8 +52,8 @@ $last		= array('id'=>'lastname', 'class'=>'form-control', 'name'=>'lastname', 'v
 $email		= array('id'=>'email', 'class'=>'form-control', 'name'=>'email', 'value'=> set_value('email', $customer['email']));
 $phone		= array('id'=>'phone', 'class'=>'form-control', 'name'=>'phone', 'value'=> set_value('phone', $customer['phone']));
 
-$password	= array('id'=>'password', 'class'=>'form-control', 'name'=>'password', 'value'=>'', 'placeholder' => 'Nueva contraseña');
-$confirm	= array('id'=>'confirm', 'class'=>'form-control', 'name'=>'confirm', 'value'=>'', 'placeholder' => 'Confirmar contraseña');
+$password	= array('id'=>'password', 'class'=>'form-control', 'name'=>'password', 'type' => 'password', 'value'=>'', 'placeholder' => 'Nueva contraseña');
+$confirm	= array('id'=>'confirm', 'class'=>'form-control', 'name'=>'confirm', 'value'=>'', 'type' => 'password','placeholder' => 'Confirmar contraseña');
 ?>	
 	<br>
 	<br>

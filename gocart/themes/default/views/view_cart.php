@@ -1,3 +1,4 @@
+<?php $this->load->view('intro'); ?>
 <?php if ($this->go_cart->total_items()==0):?>
     <div class="alert alert-info">
         <a class="close" data-dismiss="alert">×</a>

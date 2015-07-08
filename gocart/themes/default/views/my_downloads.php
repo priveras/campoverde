@@ -1,3 +1,4 @@
+<?php $this->load->view('intro'); ?>
 <?php
 $counter	= 0;
 if(!empty($downloads)) : ?>

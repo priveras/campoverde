@@ -1,3 +1,4 @@
+<?php $this->load->view('intro'); ?>
 <script>
     window.onload = function()
     {

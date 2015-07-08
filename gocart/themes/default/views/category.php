@@ -1,3 +1,4 @@
+<?php $this->load->view('intro'); ?>
 <br>
 <br>
 <div class="text-center category-header">

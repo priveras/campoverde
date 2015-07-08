@@ -1,3 +1,4 @@
+<?php $this->load->view('intro'); ?>
 <style type="text/css">
 	.placeholder {
 		display:none;

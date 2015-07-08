@@ -1,29 +1,52 @@
+<div class="row">
+    <div class="col-lg-12" style="height:700px; background-image:url('assets/img/bg-2.png'); background-size:cover;">
+        <div class="row" style="color:white">
+            <br><br><br><br><br><br><br>
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6 text-center">
+                <h1 style="font-weight:200; font-size:70px;">Campo Verde</h1>
+                <h2 style="font-weight:100; font-size:50px;">La mejor carne de res, pollo y cerdo directo a tu casa</h2>
+            </div>
+        </div>
+        <br><br><br>
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <a href="<?php echo base_url('cart/categories')?>" class="btn btn-lg transition ease" style="background-color:none; border:3px solid white; color:white; width:200px;">Hacer pedido</a>
+            </div>
+        </div>
+    </div>
+</div>
+<?php $this->load->view('intro'); ?>
 <br><br><br>
 <div class="row font">
 	<div class="col-lg-12 text-center">
-		<h1 style="font-weight:100">CARNE DIRECTO A TU CASA</h1>
-		<h3><small>Envío gratuito en el sur de la ciudad de México</small></h3>
+		<h2 style="font-weight:100">En Campo Verde tenemos la mejor carne de res, pollo y cerdo y la mandamos directo a tu casa sin costo de envío.</h2>
+
 	</div>
 </div>
-<!-- <br>
-<br>
-<div class="row font">
-	<div class="col-lg-4"></div>
+<br><br><br><br>
+<div id="about">
+<?php if(isset($this->categories[0])):?>
+
+	<?php foreach($this->categories[0] as $cat_menu):?>
 	<div class="col-lg-4">
-		<div class="row">
-			<div class="col-lg-4">
-				<div class="btn btn-success">Carne</div>
-			</div>
-			<div class="col-lg-4">
-				<div class="btn btn-success">Carne</div>
-			</div>
-			<div class="col-lg-4">
-				<div class="btn btn-success">Carne</div>
-			</div>
+		<a href="<?php echo base_url() . $cat_menu->slug ?>">
+        <div class="col-lg-12 text-center transition ease" style="height:200px; border-radius:5px; margin-bottom:30px;background-image: url('<?php echo site_url('uploads/images/full/' . $cat_menu->image);?>'); background-size:cover">
+            <br><br><br>
+            <h1 style="color:white; font-weight:100;"><?php echo $cat_menu->name ?></h1>
 		</div>
+        </a>
 	</div>
-</div> -->
-<br><br><br><br><br><br>
+	<?php endforeach;?>
+<?php endif;?>
+</div>
+<br><br><br><br>
+<div class="row">
+    <div class="col-lg-12 text-center">
+        <h1 style="font-weight:200; font-size:50px;">¿Cómo funciona?</h1>
+    </div>
+</div>
+<br><br><br>
 <div class="row text-center font">
 	<div class="col-lg-2"></div>
 	<div class="col-lg-8">
@@ -31,7 +54,7 @@
 			<div class="col-lg-4">
 				<div class="row">
 					<div class="col-lg-12">
-						<h3>Lorem ipsum dolor sit</h3>
+						<h3>Haz tu pedido en línea</h3>
 					</div>
 				</div>
 				<div class="row">
@@ -49,7 +72,7 @@
 			<div class="col-lg-4">
 				<div class="row">
 					<div class="col-lg-12">
-						<h3>Lorem ipsum dolor sit</h3>
+						<h3>Lo enviamos a tu domicilio</h3>
 					</div>
 				</div>
 				<div class="row">
@@ -67,7 +90,7 @@
 			<div class="col-lg-4">
 				<div class="row">
 					<div class="col-lg-12">
-						<h3>Lorem ipsum dolor sit</h3>
+						<h3>Disfruta tus productos</h3>
 					</div>
 				</div>
 				<div class="row">
@@ -86,89 +109,154 @@
 	</div>
 </div>
 <br>
+<br><br><br>
+<div class="jumbotron text-center intro-jumbotron" style="background-color:#00793E;">
+	<h2 style="font-weight:100; color:white; margin-top:5px;">Tenemos más de 40 años en la cría y engorda de ganado (cerdo, res y pollo)</h2>
+	<br/><br/><br/><br/>
+</div>
 <br>
-<!-- <div class="row">
-	<div class="col-lg-2"></div>
-	<div class="col-lg-8">
-		<div role="tabpanel">
-			Nav tabs 
-			<ul class="nav nav-tabs nav-justified" role="tablist">
-				<li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Carne de Cerdo</a></li>
-				<li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Carne de Pollo</a></li>
-				<li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Carne de Res</a></li>
-			</ul>
-
-			Tab panes 
-			<div class="tab-content">
-				<div role="tabpanel" class="tab-pane active" id="home">
-					<?php
-
-					$itm_cnt = 1;
-					foreach($products as $product):
-						if($itm_cnt == 1):?>
-					<div class="row">
-						<?php endif;?>
-						<div class="col-lg-4 product">
-							<div>
-								<?php
-								$photo  = theme_img('no_picture.png', lang('no_image_available'));
-	                            $product->images    = array_values($product->images);
-
-	                            if(!empty($product->images[0]))
-	                            {
-	                            	$primary    = $product->images[0];
-	                            	foreach($product->images as $photo)
-	                            	{
-	                            		if(isset($photo->primary))
-	                            		{
-	                            			$primary    = $photo;
-	                            		}
-	                            	}
-
-	                                $photo  = '<img src="'.base_url('uploads/images/thumbnails/'.$primary->filename).'" alt="'.$product->seo_title.'"/>';
-	                            }
-	                            ?>
-	                            <div class="product-image">
-	                                <a class="thumbnail" href="<?php echo site_url(implode('/', $base_url).'/'.$product->slug); ?>">
-	                                    <?php echo $photo; ?>
-	                                </a>
-	                            </div>
-	                            <h5 style="margin-top:5px;">
-	                                <a class="product-name" href="<?php echo site_url(implode('/', $base_url).'/'.$product->slug); ?>">
-	                                    <?php echo $product->name;?>
-	                                </a>
-	                                <?php if($this->session->userdata('admin')): ?>
-	                                    <a class="btn" title="<?php echo lang('edit_product'); ?>" href="<?php echo  site_url($this->config->item('admin_folder').'/products/form/'.$product->id); ?>"><i class="icon-pencil"></i></a>
-	                                <?php endif; ?>
-	                            </h5>
-
-	                            <?php if($product->excerpt != ''): ?>
-	                                <div class="product-excerpt" class="excerpt"><?php echo $product->excerpt; ?></div>
-	                            <?php endif; ?>
-	                        
-	                            <div style="margin-bottom:40px;">
-	                                <?php if($product->saleprice > 0):?>
-	                                    <span class="price-slash"><?php echo lang('product_reg');?> <?php echo format_currency($product->price); ?></span>
-	                                    <span class="price-sale"><?php echo lang('product_sale');?> <?php echo format_currency($product->saleprice); ?></span>
-	                                <?php else: ?>
-	                                    <span class="price-reg"><?php echo lang('product_price');?>Precio: <?php echo format_currency($product->price); ?></span>
-	                                <?php endif; ?>
-	                            </div>
-	                        
-	                            <?php if((bool)$product->track_stock && $product->quantity < 1 && config_item('inventory_enabled')) { ?>
-	                                <div class="stock_msg"><?php echo lang('out_of_stock');?></div>
-	                            <?php } ?>
-	                        </div>
-	                    </div>
-	                <?php endforeach; ?>
-	                <?php if($itm_cnt != 1){
-	                	echo '</div>';
-	                }?>
-		            </div>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-6 col-md-6 col-sm-6 text-center">
+			<div class="row">
+				<div class="col-lg-4"></div>
+				<div class="col-lg-4">
+					<br>
+					<p style="font-size:30px;"><i style="color:#666666"class="fa fa-cog fa-spin fa-5x"></i></p>
 				</div>
-				<div role="tabpanel" class="tab-pane" id="profile">...</div>
-				<div role="tabpanel" class="tab-pane" id="messages">...</div>
+			</div>
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-6 text-center">
+			<div class="row">
+				<div class="col-lg-12 text-center">
+					<h2 style="font-weight:200">Control de Calidad</h2>
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-lg-2"></div>
+				<div class="col-lg-8 text-justify">
+					<p style="font-weight:200; font-size:17px;">El control de calidad, es muy sencillo, le pedimos a todos nuestros proveedores que el mismo producto que nos entreguen se lo den a sus hijos y familiares, con eso estamos conformes.</p>
+				</div>
 			</div>
 		</div>
 	</div>
-</div> -->
+    <hr>
+    <div class="row">
+    	<div class="col-lg-6 col-md-6 col-sm-6 text-center hidden-lg hidden-md hidden-sm">
+    		<div class="row">
+    			<div class="col-lg-4"></div>
+    			<div class="col-lg-4">
+    				<p style="font-size:30px;"><i style="color:#aaaaaa;" class="fa fa-barcode fa-5x"></i></p>
+    			</div>
+    		</div>
+    	</div>
+    	<div class="col-lg-6 col-md-6 col-sm-6 text-center">
+    		<div class="row">
+    			<div class="col-lg-12 text-center">
+    				<h2 style="font-weight:200">Empaque</h2>
+    			</div>
+    		</div>
+    		<br>
+    		<div class="row">
+    			<div class="col-lg-2"></div>
+    			<div class="col-lg-8 text-justify">
+    				<p style="font-weight:200; font-size:17px;">La carne se encuentra sellada al alto vacio desde nuestras instalaciones, el vendedor , repartidor nunca tiene contacto directo con la carne. esto nos da una mayor higiene, estandar de calidad, ya que contamos con personal altamente capacitado y eso lo refleja trabajar con pasion.</p>
+    			</div>
+    		</div>
+    	</div>
+    	<div class="col-lg-6 col-md-6 col-sm-6 text-center hidden-xs">
+    		<div class="row">
+    			<div class="col-lg-4"></div>
+    			<div class="col-lg-4">
+    				<br><br><br>
+    				<p style="font-size:30px;"><i style="color:#aaaaaa;" class="fa fa-barcode fa-5x"></i></p>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+    <hr>
+    <div class="row">
+    	<div class="col-lg-6 col-md-6 col-sm-6 text-center">
+        	<div class="row">
+        		<div class="col-lg-2"></div>
+        		<div class="col-lg-8">
+        			<br><br>
+        			<p style="font-size:30px;"><i style="color:#666555;" class="fa fa-motorcycle fa-5x"></i></p>
+        		</div>
+        	</div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 text-center">
+        	<div class="row">
+        		<div class="col-lg-12 text-center">
+        			<h2 style="font-weight:200">Envío</h2>
+        		</div>
+        	</div>
+        	<br>
+        	<div class="row">
+        		<div class="col-lg-2"></div>
+        		<div class="col-lg-8 text-justify">
+        			<p style="font-weight:200; font-size:17px;">Si el pedido es antes de las 4 pm se entrega en el mismo dia en menos de 4 horas, si el pedido lo realiza despues de las 4 pm lo entregamos en la mañana del dia siguiente. te llamamos a tu casa o tel personal para confirmar tu pedido</p>
+        		</div>
+        	</div>
+        </div>
+    </div>
+    <br><br>
+    <div class="jumbotron text-center intro-jumbotron" style="background-color:#00793E;">
+    	<h2 style="font-weight:100; color:white; margin-top:5px;">Visitanos en nuestros puntos de venta</h2>
+    	<br/><br/><br/><br/>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+    	<div class="col-lg-12 text-center">
+    		
+    	</div>
+    </div>
+    <div class="row">
+    	<div class="col-lg-1"></div>
+    	<div class="col-lg-10 text-center">
+    		<p class="lead">¿Tienes dudas?<br>Ponte en <span style="color:#ff9500">contacto</span> con nosotros</p>
+    	</div>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+    	<div class="col-lg-3"></div>
+    	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-center">
+    		<div type="button" class="btn btn-default btn-circle btn-xl"><i class="fa fa-envelope-o" style="margin-top:12px;"></i></div>
+    	</div>
+    	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-center">
+    		<div type="button" class="btn btn-default btn-circle btn-xl"><i class="fa fa-phone" style="margin-top:12px;"></i></div>
+    	</div>
+    	<div class="col-lg-3"></div>
+    	<!-- <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-center">
+    		<a target="_blank" href="https://twitter.com/BeerhouseMex"type="button" class="btn btn-default btn-circle btn-xl"><i class="fa fa-twitter" style="margin-top:12px;"></i></a>
+    	</div>
+    	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-center">
+    		<a target="_blank" href="https://www.facebook.com/beerhouseoficial"type="button" class="btn btn-default btn-circle btn-xl"><i class="fa fa-facebook" style="margin-top:12px;"></i></a>
+    	</div> -->
+    </div>    
+    <br>
+    <br>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

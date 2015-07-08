@@ -1,3 +1,4 @@
+<?php $this->load->view('intro'); ?>
 <div class="page-header font text-center">
 	<h2>Checkout</h2>
 </div>

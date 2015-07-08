@@ -1,3 +1,5 @@
+
+<?php $this->load->view('intro'); ?>
 <?php
 
 $f_id		= array('id'=>'f_id', 'style'=>'display:none;', 'name'=>'id', 'value'=> set_value('id',$id));

@@ -1,3 +1,4 @@
+<?php $this->load->view('intro'); ?>
 <div class="page-header font text-center">
 	<h2>Número de Orden: <span style="color:#ff9500"><?php echo $order_id;?></span></h2>
 </div>

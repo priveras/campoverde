@@ -119,7 +119,7 @@ if($customer['company'] != '')
 		<?php
 		$subtotal = 0;
 		foreach ($this->go_cart->contents() as $cartkey=>$product):?>	
-			<tr <?php echo $td;?>>
+			<tr <?php //echo $td;?>>
 				<td></td>
 				<td>
 					<span><?php echo $product['name']; ?></span><br/>
