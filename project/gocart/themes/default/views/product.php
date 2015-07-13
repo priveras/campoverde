@@ -131,6 +131,116 @@
                 <div class="row">
                     <div class="col-lg-12 text-justify">
                         <?php echo $product->description; ?>
+                        <!-- Options -->
+                        <?php if(count($options) > 0): ?>
+                            <?php foreach($options as $option):
+                            $required   = '';
+                            if($option->required)
+                            {
+                                $required = ' <p class="help-block">Required</p>';
+                            }
+                            ?>
+                            <div class="control-group">
+                                <label class="control-label"><?php echo $option->name;?></label>
+                                <?php
+                                    /*
+                                    this is where we generate the options and either use default values, or previously posted variables
+                                    that we either returned for errors, or in some other releases of Go Cart the user may be editing
+                                    and entry in their cart.
+                                    */
+
+                                    //if we're dealing with a textfield or text area, grab the option value and store it in value
+                                    if($option->type == 'checklist')
+                                    {
+                                        $value  = array();
+                                        if($posted_options && isset($posted_options[$option->id]))
+                                        {
+                                            $value  = $posted_options[$option->id];
+                                        }
+                                    }
+                                    else
+                                    {
+                                        if(isset($option->values[0]))
+                                        {
+                                            $value  = $option->values[0]->value;
+                                            if($posted_options && isset($posted_options[$option->id]))
+                                            {
+                                                $value  = $posted_options[$option->id];
+                                            }
+                                        }
+                                        else
+                                        {
+                                            $value = false;
+                                        }
+                                    }
+
+                                    if($option->type == 'textfield'):?>
+                                        <div class="controls">
+                                            <input type="text" name="option[<?php echo $option->id;?>]" value="<?php echo $value;?>" class="col-lg-4"/>
+                                            <?php echo $required;?>
+                                        </div>
+                                    <?php elseif($option->type == 'textarea'):?>
+                                        <div class="controls">
+                                            <textarea class="col-lg-4" name="option[<?php echo $option->id;?>]"><?php echo $value;?></textarea>
+                                            <?php echo $required;?>
+                                        </div>
+                                    <?php elseif($option->type == 'droplist'):?>
+                                        <div class="controls">
+                                            <select name="option[<?php echo $option->id;?>]">
+                                                <option value=""><?php echo lang('choose_option');?></option>
+
+                                            <?php foreach ($option->values as $values):
+                                                $selected   = '';
+                                                if($value == $values->id)
+                                                {
+                                                    $selected   = ' selected="selected"';
+                                                }?>
+
+                                                <option<?php echo $selected;?> value="<?php echo $values->id;?>">
+                                                    <?php echo($values->price != 0)?' (+'.format_currency($values->price).') ':''; echo $values->name;?>
+                                                </option>
+
+                                            <?php endforeach;?>
+                                            </select>
+                                            <?php echo $required;?>
+                                        </div>
+                                    <?php elseif($option->type == 'radiolist'):?>
+                                        <div class="controls">
+                                            <?php foreach ($option->values as $values):
+
+                                                $checked = '';
+                                                if($value == $values->id)
+                                                {
+                                                    $checked = ' checked="checked"';
+                                                }?>
+                                                <label class="radio">
+                                                    <input<?php echo $checked;?> type="radio" name="option[<?php echo $option->id;?>]" value="<?php echo $values->id;?>"/>
+                                                    <?php echo($values->price != 0)?'(+'.format_currency($values->price).') ':''; echo $values->name;?>
+                                                </label>
+                                            <?php endforeach;?>
+                                            <?php echo $required;?>
+                                        </div>
+                                    <?php elseif($option->type == 'checklist'):?>
+                                        <div class="controls">
+                                            <?php foreach ($option->values as $values):
+
+                                                $checked = '';
+                                                if(in_array($values->id, $value))
+                                                {
+                                                    $checked = ' checked="checked"';
+                                                }?>
+                                                <label class="checkbox">
+                                                    <input<?php echo $checked;?> type="checkbox" name="option[<?php echo $option->id;?>][]" value="<?php echo $values->id;?>"/>
+                                                    <?php echo($values->price != 0)?'('.format_currency($values->price).') ':''; echo $values->name;?>
+                                                </label>
+                                                
+                                            <?php endforeach; ?>
+                                        </div>
+                                        <?php echo $required;?>
+                                    <?php endif;?>
+                                    </div>
+                            <?php endforeach;?>
+                        <?php endif;?>
                     </div>
                 </div>
                 <hr>
@@ -162,114 +272,3 @@ $(function(){
     }); 
 });
 </script>
-
-
-                            <!--     <?php if(count($options) > 0): ?>
-                                <?php foreach($options as $option):
-                                $required   = '';
-                                if($option->required)
-                                {
-                                    $required = ' <p class="help-block">Required</p>';
-                                }
-                                ?>
-                                <div class="control-group">
-                                    <label class="control-label"><?php echo $option->name;?></label>
-                                    <?php
-                                        /*
-                                        this is where we generate the options and either use default values, or previously posted variables
-                                        that we either returned for errors, or in some other releases of Go Cart the user may be editing
-                                        and entry in their cart.
-                                        */
-
-                                        //if we're dealing with a textfield or text area, grab the option value and store it in value
-                                        if($option->type == 'checklist')
-                                        {
-                                            $value  = array();
-                                            if($posted_options && isset($posted_options[$option->id]))
-                                            {
-                                                $value  = $posted_options[$option->id];
-                                            }
-                                        }
-                                        else
-                                        {
-                                            if(isset($option->values[0]))
-                                            {
-                                                $value  = $option->values[0]->value;
-                                                if($posted_options && isset($posted_options[$option->id]))
-                                                {
-                                                    $value  = $posted_options[$option->id];
-                                                }
-                                            }
-                                            else
-                                            {
-                                                $value = false;
-                                            }
-                                        }
-
-                                        if($option->type == 'textfield'):?>
-                                            <div class="controls">
-                                                <input type="text" name="option[<?php echo $option->id;?>]" value="<?php echo $value;?>" class="col-lg-4"/>
-                                                <?php echo $required;?>
-                                            </div>
-                                        <?php elseif($option->type == 'textarea'):?>
-                                            <div class="controls">
-                                                <textarea class="col-lg-4" name="option[<?php echo $option->id;?>]"><?php echo $value;?></textarea>
-                                                <?php echo $required;?>
-                                            </div>
-                                        <?php elseif($option->type == 'droplist'):?>
-                                            <div class="controls">
-                                                <select name="option[<?php echo $option->id;?>]">
-                                                    <option value=""><?php echo lang('choose_option');?></option>
-
-                                                <?php foreach ($option->values as $values):
-                                                    $selected   = '';
-                                                    if($value == $values->id)
-                                                    {
-                                                        $selected   = ' selected="selected"';
-                                                    }?>
-
-                                                    <option<?php echo $selected;?> value="<?php echo $values->id;?>">
-                                                        <?php echo($values->price != 0)?' (+'.format_currency($values->price).') ':''; echo $values->name;?>
-                                                    </option>
-
-                                                <?php endforeach;?>
-                                                </select>
-                                                <?php echo $required;?>
-                                            </div>
-                                        <?php elseif($option->type == 'radiolist'):?>
-                                            <div class="controls">
-                                                <?php foreach ($option->values as $values):
-
-                                                    $checked = '';
-                                                    if($value == $values->id)
-                                                    {
-                                                        $checked = ' checked="checked"';
-                                                    }?>
-                                                    <label class="radio">
-                                                        <input<?php echo $checked;?> type="radio" name="option[<?php echo $option->id;?>]" value="<?php echo $values->id;?>"/>
-                                                        <?php echo($values->price != 0)?'(+'.format_currency($values->price).') ':''; echo $values->name;?>
-                                                    </label>
-                                                <?php endforeach;?>
-                                                <?php echo $required;?>
-                                            </div>
-                                        <?php elseif($option->type == 'checklist'):?>
-                                            <div class="controls">
-                                                <?php foreach ($option->values as $values):
-
-                                                    $checked = '';
-                                                    if(in_array($values->id, $value))
-                                                    {
-                                                        $checked = ' checked="checked"';
-                                                    }?>
-                                                    <label class="checkbox">
-                                                        <input<?php echo $checked;?> type="checkbox" name="option[<?php echo $option->id;?>][]" value="<?php echo $values->id;?>"/>
-                                                        <?php echo($values->price != 0)?'('.format_currency($values->price).') ':''; echo $values->name;?>
-                                                    </label>
-                                                    
-                                                <?php endforeach; ?>
-                                            </div>
-                                            <?php echo $required;?>
-                                        <?php endif;?>
-                                        </div>
-                                <?php endforeach;?>
-                            <?php endif;?> -->
