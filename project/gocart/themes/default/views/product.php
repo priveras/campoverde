@@ -131,6 +131,7 @@
                 <div class="row">
                     <div class="col-lg-12 text-justify">
                         <?php echo $product->description; ?>
+                        <?php echo form_open('cart/add_to_cart');?>
                         <!-- Options -->
                         <?php if(count($options) > 0): ?>
                             <?php foreach($options as $option):
@@ -246,7 +247,6 @@
                 <hr>
                 <div class="row">
                     <div class="col-lg-12">
-                        <?php echo form_open('cart/add_to_cart');?>
                             <input type="hidden" name="cartkey" value="<?php echo $this->session->flashdata('cartkey');?>" />
                             <input type="hidden" name="id" value="<?php echo $product->id?>"/>
                             <?php if(!config_item('inventory_enabled') || config_item('allow_os_purchase') || !(bool)$product->track_stock || $product->quantity > 0) : ?>
