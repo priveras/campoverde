@@ -122,8 +122,8 @@
                                 <small>¡De Oferta!</small>
                             </h3>
                         <?php else: ?>
-                            <small><?php echo lang('product_price');?></small>
-                            <span class="product_price font"><h3><?php echo format_currency($product->price); ?></h3></span>
+                            <!-- <small><?php echo lang('product_price');?></small>
+                            <span class="product_price font"><h3><?php echo format_currency($product->price); ?></h3></span> -->
                         <?php endif;?>
                     </div>
                 </div>
@@ -142,7 +142,8 @@
                             }
                             ?>
                             <div class="control-group">
-                                <label class="control-label"><?php echo $option->name;?></label>
+                                <h3 style="font-weight:200"><?php echo $option->name;?></h3>
+                                <hr>
                                 <?php
                                     /*
                                     this is where we generate the options and either use default values, or previously posted variables
@@ -216,7 +217,7 @@
                                                 }?>
                                                 <label class="radio">
                                                     <input<?php echo $checked;?> type="radio" name="option[<?php echo $option->id;?>]" value="<?php echo $values->id;?>"/>
-                                                    <?php echo($values->price != 0)?'(+'.format_currency($values->price).') ':''; echo $values->name;?>
+                                                    <?php echo '<p style="font-weight:200; font-size:16px;">'; echo '<span style="color:#ff9500">'.$values->name . '</span> - ';  echo($values->price != 0)?''.format_currency($values->price).'':''; echo '</p>'?>
                                                 </label>
                                             <?php endforeach;?>
                                             <?php echo $required;?>
