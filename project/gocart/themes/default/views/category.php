@@ -118,7 +118,7 @@
                                     <span class="price-slash"><?php echo lang('product_reg');?> <?php echo format_currency($product->price); ?></span>
                                     <span class="price-sale"><?php echo lang('product_sale');?> <?php echo format_currency($product->saleprice); ?></span>
                                 <?php else: ?>
-                                    <span class="price-reg"><!--<?php echo lang('product_price');?>-->Precio: <?php echo format_currency($product->price); ?></span>
+                                    <!-- <span class="price-reg"><?php echo lang('product_price');?>Precio: <?php echo format_currency($product->price); ?></span>-->
                                 <?php endif; ?>
                             </div>
                         
