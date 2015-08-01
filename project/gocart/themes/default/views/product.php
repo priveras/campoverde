@@ -138,7 +138,7 @@
                             $required   = '';
                             if($option->required)
                             {
-                                $required = ' <p class="help-block">Required</p>';
+                                // $required = ' <p class="help-block">Required</p>';
                             }
                             ?>
                             <div class="control-group">
