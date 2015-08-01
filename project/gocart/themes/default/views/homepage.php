@@ -4,6 +4,7 @@
             <br><br><br><br><br><br><br>
             <div class="col-lg-3"></div>
             <div class="col-lg-6 text-center">
+                <div style="margin:0 auto;height:100px; width:100px; background-image:url('assets/img/CampoVerde.png'); background-size:cover;"></div>
                 <h1 style="font-weight:200; font-size:70px;">Campo Verde</h1>
                 <h2 style="font-weight:100; font-size:50px;">La mejor carne de res, pollo y cerdo directo a tu casa</h2>
             </div>
