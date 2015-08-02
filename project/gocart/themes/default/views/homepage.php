@@ -211,24 +211,36 @@
     <br>
     <div class="row">
     	<div class="col-lg-12 text-center">
-    	   <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?q=Heroes%20de%20Padierna%20132%2C%20San%20Jer%C3%B3nimo%20L%C3%ADdice%2C%20Mexico%20City%2C%20Mexico&key=AIzaSyBD8NNoEVyhouBnCU5Exp_eKHK--eOay2Y" allowfullscreen></iframe>	
+            <div class="row">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-6">
+                    <div class="alert" style="background-color:#ff9500; color:white" role="alert">
+                        Local comercial # 8 de Plaza Lídice , Heroes de Padierna número 132 col. San Jeronimo Lídice, Delegación Magdalena Contreras , CP 10200. Ciudad de México 
+                    </div>
+                </div>
+            </div>
+            <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?q=Heroes%20de%20Padierna%20132%2C%20San%20Jer%C3%B3nimo%20L%C3%ADdice%2C%20Mexico%20City%2C%20Mexico&key=AIzaSyBD8NNoEVyhouBnCU5Exp_eKHK--eOay2Y" allowfullscreen></iframe>	
     	</div>
     </div>
+    <br>
+    <hr>
+    <br>
+    <br>
     <div class="row">
     	<div class="col-lg-1"></div>
     	<div class="col-lg-10 text-center">
     		<p class="lead">¿Tienes dudas?<br>Ponte en <span style="color:#ff9500">contacto</span> con nosotros</p>
     	</div>
     </div>
-    <br>
-    <br>
     <div class="row">
     	<div class="col-lg-3"></div>
     	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-center">
     		<div type="button" class="btn btn-default btn-circle btn-xl"><i class="fa fa-envelope-o" style="margin-top:12px;"></i></div>
+            <p style="font-weight:200; margin-top:20px;">contacto@tucampoverde.com</p>
     	</div>
     	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-center">
     		<div type="button" class="btn btn-default btn-circle btn-xl"><i class="fa fa-phone" style="margin-top:12px;"></i></div>
+            <p style="font-weight:200; margin-top:20px;">55 67 89 09</p>
     	</div>
     	<div class="col-lg-3"></div>
     	<!-- <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-center">
@@ -238,8 +250,6 @@
     		<a target="_blank" href="https://www.facebook.com/beerhouseoficial"type="button" class="btn btn-default btn-circle btn-xl"><i class="fa fa-facebook" style="margin-top:12px;"></i></a>
     	</div> -->
     </div>    
-    <br>
-    <br>
   </div>
 
 
