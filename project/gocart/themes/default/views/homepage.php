@@ -211,7 +211,7 @@
     <br>
     <div class="row">
     	<div class="col-lg-12 text-center">
-    		
+    	   <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?q=Heroes%20de%20Padierna%20132%2C%20San%20Jer%C3%B3nimo%20L%C3%ADdice%2C%20Mexico%20City%2C%20Mexico&key=AIzaSyBD8NNoEVyhouBnCU5Exp_eKHK--eOay2Y" allowfullscreen></iframe>	
     	</div>
     </div>
     <div class="row">
