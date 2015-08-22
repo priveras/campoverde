@@ -4,27 +4,27 @@ US English
 Admin Order Language
 ******************************************/
 
-$lang['orders']						= 'Orders';
-$lang['view_order']					= 'View Order';
-$lang['notes']						= 'Notes';
+$lang['orders']						= 'Órdenes';
+$lang['view_order']					= 'Ver Órden';
+$lang['notes']						= 'Notas';
 $lang['status']						= 'Status';
 $lang['giftcard_is_active']			= 'Gift Card is Active';
-$lang['activate']					= 'Activate';
-$lang['order']						= 'Order';
-$lang['bill_to']					= 'Bill To';
-$lang['ship_to']					= 'Ship To';
-$lang['ordered_on']					= 'Ordered On';
-$lang['from'	]					= 'From';
-$lang['to']							= 'To';
-$lang['term']						= 'Search Term';
-$lang['xml_export']					= 'XML Export';
+$lang['activate']					= 'Activar';
+$lang['order']						= 'Orden';
+$lang['bill_to']					= 'Facturación';
+$lang['ship_to']					= 'Datos de Envío';
+$lang['ordered_on']					= 'Fecha';
+$lang['from'	]					= 'De';
+$lang['to']							= 'Paraº';
+$lang['term']						= 'Buscar';
+$lang['xml_export']					= 'Exportar XML';
 
-$lang['no_orders']					= 'There are currently no orders.';
-$lang['message_order_updated']		= 'The order has been updated.';
-$lang['message_orders_deleted']		= 'The selected orders have been deleted';
-$lang['error_no_orders_selected']	= 'You did not select any orders to delete';
-$lang['confirm_delete_order']		= 'Are you sure you want to delete the selected orders?';
-$lang['sent_notification_message']	= 'Email notification has been sent!';
+$lang['no_orders']					= 'No hay órdenes';
+$lang['message_order_updated']		= 'La órden se ha actualizado';
+$lang['message_orders_deleted']		= 'Las órdenes se han eliminado';
+$lang['error_no_orders_selected']	= 'No se han seleccionado órdenes para eliminar';
+$lang['confirm_delete_order']		= '¿Seguro que quieres eliminar esto?';
+$lang['sent_notification_message']	= 'El email se ha enviado';
 
 $lang['send_email_notification']	= 'Send Email Notification';
 $lang['packing_slip']				= 'Packing Slip';
