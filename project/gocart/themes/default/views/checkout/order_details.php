@@ -1,4 +1,4 @@
-<?php $this->load->view('intro'); ?>
+
 <div class="row font">
 	<!--<?php if(!empty($customer['bill_address'])):?>
 	<div class="col-lg-3">
@@ -28,6 +28,7 @@
 		</div>
 	</div>
 	<?php endif;?>-->
+
 
 <?php if(config_item('require_shipping')):?>
 	<?php if($this->go_cart->requires_shipping()):?>
@@ -65,4 +66,16 @@
 		<?php echo $payment_method['description'];?>
 	</div>
 <?php endif;?>
+	<div class="col-lg-3">
+		<div class="panel panel-default" style="min-width:270px;">
+			<div class="panel-heading">Método de Pago</div>
+			<div class="panel-body">
+				<p>El pago se hace en el momento de la entrega.</p>
+				<p>
+					Efectivo - Tarjeta de Débito/Crédito
+					<img style="width:100px; margin-top:17px;"src="https://mailchimp.organicweb.com.au/wp-content/uploads/2015/08/Visa-MasterCard-amex.jpeg">
+				</p>
+			</div>
+		</div>
+	</div>
 </div>

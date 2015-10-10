@@ -93,12 +93,12 @@
                             <?php endif; ?>
                             </h5>
                             <div>
-                                <?php if($relate->saleprice > 0):?>
+                                <!-- <?php if($relate->saleprice > 0):?>
                                     <span class="price-slash"><?php echo lang('product_reg');?> <?php echo format_currency($relate->price); ?></span>
                                     <span class="price-sale"><?php echo lang('product_sale');?> <?php echo format_currency($relate->saleprice); ?></span>
                                 <?php else: ?>
                                     <span class="price-reg"><?php echo lang('product_price');?> <?php echo format_currency($relate->price); ?></span>
-                                <?php endif; ?>
+                                <?php endif; ?> -->
                             </div>
                             <?php if((bool)$relate->track_stock && $relate->quantity < 1 && config_item('inventory_enabled')) { ?>
                                 <div class="stock_msg"><?php echo lang('out_of_stock');?></div>

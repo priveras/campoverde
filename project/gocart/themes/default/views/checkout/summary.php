@@ -1,4 +1,4 @@
-<?php $this->load->view('intro'); ?>
+
 	<div class="panel panel-default font">
 		<div class="panel-heading">Resumen de tu compra</div>
 		<div class="panel-body">
